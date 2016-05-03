@@ -4,16 +4,6 @@ use Jason\TestCase;
 
 class ExampleTest extends TestCase
 {
-    protected function getJasonAddress()
-    {
-        return "http://localhost:4321";
-    }
-
-    protected function getBasePath()
-    {
-        return realpath(__DIR__ . "/../");
-    }
-
     public function testHasNormalResponse()
     {
         $page = $this->visit("http://localhost:5432");
