@@ -1,0 +1,16 @@
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../jason-the-phantom-phpunit"
+        }
+    ],
+    "require": {
+        "jason-the-phantom/phpunit": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "slim/slim": "^3.3"
+    }
+}
