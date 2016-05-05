@@ -1,17 +1,41 @@
 <?php
 
-use Jason\TestCase;
+use Undemanding\Client\Tester;
 
-class ExampleTest extends TestCase
+class ExampleTest extends PHPUnit_Framework_TestCase
 {
-    public function testHasNormalResponse()
+    use Tester;
+
+    /**
+     * @inheritdoc
+     */
+    public static function setUpBeforeClass()
+    {
+        static::undemandingStart();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function tearDownAfterClass()
+    {
+        static::undemandingStop();
+    }
+
+    /**
+     * @test
+     */
+    public function hasNormalResponse()
     {
         $page = $this->visit("http://localhost:5432");
 
         $this->assertContains("hello world", $page->body());
     }
 
-    public function testHasModifiedResponse()
+    /**
+     * @test
+     */
+    public function hasModifiedResponse()
     {
         $page = $this->visit("http://localhost:5432")
             ->run("document.write('modified')");
@@ -19,7 +43,10 @@ class ExampleTest extends TestCase
         $this->assertContains("modified", $page->body());
     }
 
-    public function testCanCapture()
+    /**
+     * @test
+     */
+    public function canCapture()
     {
         $page = $this->visit("http://localhost:5432")
             ->resize($width = 1280,  $height = 200)

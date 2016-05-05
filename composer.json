@@ -1,16 +1,16 @@
 {
     "repositories": [
         {
-            "type": "path",
-            "url": "../jason-the-phantom-phpunit"
+            "type": "vcs",
+            "url": "https://github.com/undemanding/client"
         }
     ],
     "require": {
-        "jason-the-phantom/phpunit": "*"
+        "undemanding/client": "*"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require-dev": {
         "slim/slim": "^3.3"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
